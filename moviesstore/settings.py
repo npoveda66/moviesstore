@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-+hz=yez-=*q^xwwxiw2mkib95q5h5=u9(mcc=gabqdv2!sjihg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['npoveda.pythonanywhere.com']
+ALLOWED_HOSTS = ['npoveda.pythonanywhere.com', 
+                 '127.0.0.1',]
 
 
 # Application definition
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'movies',
     'accounts',
     'cart',
+    'petitions',
 ]
 
 MIDDLEWARE = [

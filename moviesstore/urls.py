@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('movies/', include('movies.urls')),
+    path('petitions/', include('petitions.urls')), # Realized too late into coding all this that book used single quotes and not double, rip Java.
     path('accounts/', include('accounts.urls')),
     path('cart/', include('cart.urls'))
 ]

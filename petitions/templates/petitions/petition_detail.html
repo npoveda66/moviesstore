@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="p-3">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col mx-auto mb-3">
+        <h1>{{ petition.title }}</h1>
+        <p>{{ petition.description }}</p>
+        <p>Created by: {{ petition.created_by.username }}</p>
+        <p> Yes votes: {{ petition.yes_votes}} | No votes: {{ petition.no_votes }}</p>
+
+        {% if existing_vote %}
+        <p>You already voted: {{ existing_vote.get_vote_type_display }}</p>
+        {% else %}
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Vote</button>
+            </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
